@@ -101,25 +101,25 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 					switch( key ){
 						
 						case 'post_type':
-							index = 20;
+							index = 1;
 							break;
 						case 'author':
-							index = 19;
+							index = 2;
 							break;
 						case 'published_date':
-							index = 18;
+							index = 3;
 							break;
 						case 'modified_date':
-							index = 17;
+							index = 4;
 							break;
 						case 'categories':
-							index = 16;
+							index = 5;
 							break;
 						case 'tags':
-							index = 15;
+							index = 6;
 							break;
 						case 'hits':
-							index = 14;
+							index = 7;
 							break;
 						
 					}
@@ -166,9 +166,13 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 					
 					var trackerName = key + '.' + trackerName;
 					
+					ga( 'create', ca_trackers[ key ], 'auto' , {'name': key } );
+					
+				} else {
+					
+					ga( 'create', ca_trackers[ key ], 'auto' );
+					
 				}
-				
-				ga( 'create', ca_trackers[ key ], 'auto' );
 				
 				set_dimensions( key );
 				
