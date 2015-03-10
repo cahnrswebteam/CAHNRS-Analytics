@@ -60,8 +60,6 @@
 	
 	jQuery('body').on( 'click' , 'a' , function( event ){
 		
-		event.preventDefault();
-		
 		ca_track_link( jQuery(this) );
 		
 	});
