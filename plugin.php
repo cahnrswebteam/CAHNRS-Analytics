@@ -3,10 +3,9 @@
  * Plugin Name: CAHNRS Analytics.
  * Plugin URI: https://github.com/cahnrswebteam/CAHNRS-Analytics/wiki
  * Description: Custom Analytics for CAHNRS.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: CAHNRS Communications, Danial Bleile
  * Author URI: http://URI_Of_The_Plugin_Author
- * License: GPL2
 */
 
 define( 'CAHNRSANALYTICS' , true );
