@@ -74,9 +74,9 @@
 		
 			if ( is_doc ){ // is document
 			
-				if ( typeof ca_send_event !== 'undefined' ){
+				if ( typeof CAHNRS_Tracker.track.event_hit !== 'undefined' ){
 			  
-					ca_send_event( 'File Download', is_doc.type , href )
+					CAHNRS_Tracker.track.event_hit( 'File Download', is_doc.type , href )
 					
 				}; // end if
 				
@@ -86,9 +86,9 @@
 				
 				var link_type = ( href.indexOf("wsu.edu") > -1 ) ? 'Inbound Link' : 'Outbound Link';
 				
-				if ( typeof ca_send_event !== 'undefined' ){
+				if ( typeof CAHNRS_Tracker.track.event_hit !== 'undefined' ){
 		  
-					ca_send_event( link_type, label , href )
+					CAHNRS_Tracker.track.event_hit( link_type, label , href )
 					
 				}; // end if
 			
@@ -393,9 +393,9 @@
   */
   function fireAnalyticsEvent( youTubeIframe, state ) {
 	  
-	  if ( typeof ca_send_event !== 'undefined' ){
+	  if ( typeof CAHNRS_Tracker.track.event_hit !== 'undefined' ){
 		  
-		  ca_send_event( 'YouTubeVideo', youTubeIframe.videoTitle , state )
+		  CAHNRS_Tracker.track.event_hit( 'YouTubeVideo', youTubeIframe.videoTitle , state )
 		  
 	  }; // end if
 

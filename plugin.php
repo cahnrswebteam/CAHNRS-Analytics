@@ -3,7 +3,7 @@
  * Plugin Name: CAHNRS Analytics.
  * Plugin URI: https://github.com/cahnrswebteam/CAHNRS-Analytics/wiki
  * Description: Custom Analytics for CAHNRS.
- * Version: 1.0.4
+ * Version: 1.1.0
  * Author: CAHNRS Communications, Danial Bleile
  * Author URI: http://URI_Of_The_Plugin_Author
 */
@@ -54,11 +54,11 @@ class CAHNRS_Analytics {
 		
 		global $wp_query;
 		
+		$settings = $this->options->get_options();
+		
 		//var_dump( $wp_query->post );
 		
-		$this->post_data->the_data( $wp_query->post );
-		
-		$settings = $this->options->get_options();
+		$this->post_data->the_data( $wp_query->post , $settings );
 		
 		$this->tracker->the_tracker( $settings );
 		
