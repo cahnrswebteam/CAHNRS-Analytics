@@ -19,6 +19,19 @@ class CAHNRS_Analytics_Options {
 			'description' => '',
 			'priority'    => 1,
 		));
+		
+		$wp_customize->add_setting('cahnrs_analytics_options[wsu_ua]', array(
+			'default'        => '0',
+			'capability' => 'edit_theme_options',
+			'type'       => 'option',
+		));
+	
+		$wp_customize->add_control('cahnrs_analytics_wsu_global', array(
+			'settings' => 'cahnrs_analytics_options[wsu_ua]',
+			'label'    => 'Disable WSU Global U-A',
+			'section'  => 'cahnrs_analytics',
+			'type'     => 'checkbox',
+		));
 	
 		$wp_customize->add_setting('cahnrs_analytics_options[cahnrs_ua]', array(
 			'capability' => 'edit_theme_options',
@@ -81,6 +94,66 @@ class CAHNRS_Analytics_Options {
 			'label'      => 'Grandparent U-A ( Optional )',
 			'section'    => 'cahnrs_analytics',
 			'settings'   => 'cahnrs_analytics_options[ua3]',
+		));
+		
+		
+		$wp_customize->add_setting('cahnrs_analytics_options[campus]', array(
+			'default'        => 'none',
+			'capability'     => 'edit_theme_options',
+			'type'           => 'option',
+	 
+		));
+ 
+		$wp_customize->add_control('cahnrs_analytics_campus', array(
+			'label'      => 'Campus ( Optional )',
+			'section'    => 'cahnrs_analytics',
+			'settings'   => 'cahnrs_analytics_options[campus]',
+			'type'       => 'select',
+			'choices'    => array(
+				'none'         => 'None',
+				'pullman'      => 'Pullman',
+				'spokane'      => 'Spokane',
+				'everett'      => 'Everett',
+				'globalcampus' => 'Global Campus',
+				'vancouver'    => 'Vancouver',
+			)
+		));
+		
+		$wp_customize->add_setting('cahnrs_analytics_options[unit_type]', array(
+			'default'        => 'none',
+			'capability'     => 'edit_theme_options',
+			'type'           => 'option',
+	 
+		));
+ 
+		$wp_customize->add_control('cahnrs_analytics_unit_type', array(
+			'label'      => 'Unit Type ( Optional )',
+			'section'    => 'cahnrs_analytics',
+			'settings'   => 'cahnrs_analytics_options[unit_type]',
+			'type'       => 'select',
+			'choices'    => array(
+				'none'       => 'None',
+				'unit'       => 'Unit',
+				'office'     => 'Office',
+				'school'     => 'School',
+				'department' => 'Department',
+				'program'    => 'Program',
+				'center'     => 'Center',
+				'laboratory' => 'Laboratory',
+			)
+		));
+		
+		$wp_customize->add_setting('cahnrs_analytics_options[site_url]', array(
+			'default'        => $_SERVER['SERVER_NAME'],
+			'capability'     => 'edit_theme_options',
+			'type'           => 'option',
+	 
+		));
+ 
+		$wp_customize->add_control('cahnrs_analytics_site_url', array(
+			'label'      => 'Base URL ( Optional )',
+			'section'    => 'cahnrs_analytics',
+			'settings'   => 'cahnrs_analytics_options[site_url]',
 		));
 		
 	} // end method add_customize_section
