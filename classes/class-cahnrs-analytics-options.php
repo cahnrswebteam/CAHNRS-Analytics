@@ -21,7 +21,6 @@ class CAHNRS_Analytics_Options {
 		));
 		
 		$wp_customize->add_setting('cahnrs_analytics_options[wsu_ua]', array(
-			'default'        => '0',
 			'capability' => 'edit_theme_options',
 			'type'       => 'option',
 		));
@@ -33,13 +32,13 @@ class CAHNRS_Analytics_Options {
 			'type'     => 'checkbox',
 		));
 	
-		$wp_customize->add_setting('cahnrs_analytics_options[cahnrs_ua]', array(
+		$wp_customize->add_setting('cahnrs_analytics_options[cahnrs_ua_off]', array(
 			'capability' => 'edit_theme_options',
 			'type'       => 'option',
 		));
 	
 		$wp_customize->add_control('cahnrs_analytics_global', array(
-			'settings' => 'cahnrs_analytics_options[cahnrs_ua]',
+			'settings' => 'cahnrs_analytics_options[cahnrs_ua_off]',
 			'label'    => 'CAHNRS Global U-A',
 			'section'  => 'cahnrs_analytics',
 			'type'     => 'checkbox',
